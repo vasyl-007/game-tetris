@@ -33,12 +33,12 @@
   background-color: #1e488c;
 }
 
-/* .input {
+.input {
   display: block;
   margin: 30px auto;
   font-size: 30px;
   padding: 10px;
-} */
+}
 
 /* .controls {
   padding: 20px;
@@ -78,7 +78,7 @@
 /* .button:hover {
   border-radius: 40px;
 } */
-/* 
+
 .overlay {
     position: fixed;
     top: 0;
@@ -87,7 +87,7 @@
     height: 100%;
     z-index: 2;
     background-color: #1e488c;
-} */
+}
 
 .author {
   margin: 0 auto;
