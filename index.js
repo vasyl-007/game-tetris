@@ -272,11 +272,14 @@ let mainArr = [
 
 let currentFigure = 0;
 let figureBody = 0;
+let rotate = 1;
 
 function create() {
   function getRandom() {
     return Math.round(Math.random() * (mainArr.length - 1));
   }
+
+  rotate = 1;
   currentFigure = getRandom();
 
   figureBody = [
@@ -353,6 +356,54 @@ function move() {
       figureBody[i].classList.remove("figure");
       figureBody[i].classList.add("set");
     }
+
+    for (let i = 1; i < 15; i++) {
+      // check vector "y"
+      let count = 0;
+      for (let k = 1; k < 11; k++) {
+        // check vector "x" to burn a row
+        if (
+          document
+            .querySelector(`[posX = "${k}"][posY = "${i}"]`)
+            .classList.contains("set")
+        ) {
+          count++;
+          if (count == 10) {
+            for (let m = 1; m < 11; m++) {
+              document
+                .querySelector(`[posX = "${m}"][posY = "${i}"]`)
+                .classList.remove("set");
+            }
+            let set = document.querySelectorAll(".set");
+            let newSet = [];
+            for (let s = 0; s < set.length; s++) {
+              let setCoordinates = [
+                set[s].getAttribute("posX"),
+                set[s].getAttribute("posY"),
+              ];
+              if (setCoordinates[1] > i) {
+                set[s].classList.remove("set");
+                newSet.push(
+                  document
+                    .querySelector(
+                      `[posX = "${setCoordinates[0]}"][posY = "${
+                        setCoordinates[1] - 1
+                      }"]`
+                    )
+                    .classList.remove("set")
+                );
+              }
+            }
+
+            for (let a = 0; a < newSet.length; a++) {
+              newSet[a].classList.add("set");
+            }
+            i--;
+          }
+        }
+      }
+    }
+
     create();
   }
 }
@@ -424,5 +475,64 @@ window.addEventListener("keydown", function (e) {
     getNewState(1); // move right
   } else if (e.keyCode == 40) {
     move(); // move down
+  } else if (e.keyCode == 38) {
+    // pressing "up" means rotate to 90 deg
+
+    flag = true;
+
+    let figureNew = [
+      document.querySelector(
+        `[posX = "${
+          +coordinates1[0] + mainArr[currentFigure][rotate + 2][0][0]
+        }"][posY = "${
+          +coordinates1[1] + mainArr[currentFigure][rotate + 2][0][1]
+        }"]`
+      ),
+      document.querySelector(
+        `[posX = "${
+          +coordinates2[0] + mainArr[currentFigure][rotate + 2][1][0]
+        }"][posY = "${
+          +coordinates2[1] + mainArr[currentFigure][rotate + 2][1][1]
+        }"]`
+      ),
+      document.querySelector(
+        `[posX = "${
+          +coordinates3[0] + mainArr[currentFigure][rotate + 2][2][0]
+        }"][posY = "${
+          +coordinates3[1] + mainArr[currentFigure][rotate + 2][2][1]
+        }"]`
+      ),
+      document.querySelector(
+        `[posX = "${
+          +coordinates4[0] + mainArr[currentFigure][rotate + 2][3][0]
+        }"][posY = "${
+          +coordinates4[1] + mainArr[currentFigure][rotate + 2][3][1]
+        }"]`
+      ),
+    ];
+
+    for (let i = 0; i < figureNew.length; i++) {
+      if (!figureNew[i] || figureNew[i].classList.contains("set")) {
+        flag = false;
+      }
+    }
+
+    if (flag == true) {
+      for (let i = 0; i < figureBody.length; i++) {
+        figureBody[i].classList.remove("figure");
+      }
+
+      figureBody = figureNew;
+
+      for (let i = 0; i < figureBody.length; i++) {
+        figureBody[i].classList.add("figure");
+      }
+
+      if (rotate < 4) {
+        rotate++;
+      } else {
+        rotate = 1;
+      }
+    }
   }
 });
