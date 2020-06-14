@@ -112,6 +112,7 @@ input {
 }
 
 .author {
+  width: 1000px;
   margin-top: 0;
   padding: 0 0 0 30px;
 }
