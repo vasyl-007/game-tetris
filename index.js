@@ -29,6 +29,35 @@ let mainArr = [
     [0, 1],
     [0, 2],
     [0, 3],
+
+    // 90 deg rotation of a stick
+    [
+      [-1, 1],
+      [0, 0],
+      [1, -1],
+      [2, -2],
+    ],
+    // 180 deg rotation of a stick
+    [
+      [1, -1],
+      [0, 0],
+      [-1, 1],
+      [-2, 2],
+    ],
+    // 270 deg rotation of a stick
+    [
+      [-1, 1],
+      [0, 0],
+      [1, -1],
+      [2, -2],
+    ],
+    // 360 deg rotation of a stick
+    [
+      [1, -1],
+      [0, 0],
+      [-1, 1],
+      [-2, 2],
+    ],
   ],
 
   // cube
@@ -36,6 +65,34 @@ let mainArr = [
     [1, 0],
     [0, 1],
     [1, 1],
+    // 90 deg rotation of a cube
+    [
+      [0, 0],
+      [0, 0],
+      [0, 0],
+      [0, 0],
+    ],
+    // 180 deg rotation of a cube
+    [
+      [0, 0],
+      [0, 0],
+      [0, 0],
+      [0, 0],
+    ],
+    // 270 deg rotation of a cube
+    [
+      [0, 0],
+      [0, 0],
+      [0, 0],
+      [0, 0],
+    ],
+    // 360 deg rotation of a cube
+    [
+      [0, 0],
+      [0, 0],
+      [0, 0],
+      [0, 0],
+    ],
   ],
 
   // L-right
@@ -43,6 +100,34 @@ let mainArr = [
     [1, 0],
     [0, 1],
     [0, 2],
+    // 90 deg rotation of a L-right
+    [
+      [0, 0],
+      [-1, 1],
+      [1, 0],
+      [2, -1],
+    ],
+    // 180 deg rotation of a L-right
+    [
+      [1, -1],
+      [1, -1],
+      [-1, 0],
+      [-1, 0],
+    ],
+    // 270 deg rotation of a L-right
+    [
+      [-1, 0],
+      [0, -1],
+      [2, -2],
+      [1, -1],
+    ],
+    // 360 deg rotation of a L-right
+    [
+      [0, -1],
+      [0, -1],
+      [-2, 0],
+      [-2, 0],
+    ],
   ],
 
   // L-left
@@ -50,6 +135,34 @@ let mainArr = [
     [1, 0],
     [1, 1],
     [1, 2],
+    // 90 deg rotation of a L-left
+    [
+      [0, 0],
+      [0, 0],
+      [1, -1],
+      [-1, -1],
+    ],
+    // 180 deg rotation of a L-left
+    [
+      [0, -1],
+      [-1, 0],
+      [-2, 1],
+      [1, 0],
+    ],
+    // 270 deg rotation of a L-left
+    [
+      [2, 0],
+      [0, 0],
+      [1, -1],
+      [1, -1],
+    ],
+    // 360 deg rotation of a L-left
+    [
+      [-2, 0],
+      [1, -1],
+      [0, 0],
+      [-1, 1],
+    ],
   ],
 
   // ligthning-right
@@ -57,6 +170,34 @@ let mainArr = [
     [1, 0],
     [-1, 1],
     [0, 1],
+    // 90 deg rotation of a ligthning-right
+    [
+      [0, -1],
+      [-1, 0],
+      [2, -1],
+      [1, 0],
+    ],
+    // 180 deg rotation of a ligthning-right
+    [
+      [0, 0],
+      [1, -1],
+      [-2, 0],
+      [-1, -1],
+    ],
+    // 270 deg rotation of a ligthning-right
+    [
+      [0, -1],
+      [-1, 0],
+      [2, -1],
+      [1, 0],
+    ],
+    // 360 deg rotation of a ligthning-right
+    [
+      [0, 0],
+      [1, -1],
+      [-2, 0],
+      [-1, -1],
+    ],
   ],
 
   // ligthning-left
@@ -64,12 +205,68 @@ let mainArr = [
     [1, 0],
     [1, 1],
     [2, 1],
+    // 90 deg rotation of a ligthning-left
+    [
+      [2, -1],
+      [0, 0],
+      [1, -1],
+      [-1, 0],
+    ],
+    // 180 deg rotation of a ligthning-left
+    [
+      [-2, 0],
+      [0, -1],
+      [-1, 0],
+      [1, -1],
+    ],
+    // 270 deg rotation of a ligthning-left
+    [
+      [2, -1],
+      [0, 0],
+      [1, -1],
+      [-1, 0],
+    ],
+    // 360 deg rotation of a ligthning-left
+    [
+      [-2, 0],
+      [0, -1],
+      [-1, 0],
+      [1, -1],
+    ],
   ],
   // T-figure
   [
     [1, 0],
     [2, 0],
     [1, 1],
+    // 90 deg rotation of a T-figure
+    [
+      [1, -1],
+      [0, 0],
+      [0, 0],
+      [0, 0],
+    ],
+    // 180 deg rotation of a T-figure
+    [
+      [0, 0],
+      [-1, 0],
+      [-1, 0],
+      [1, -1],
+    ],
+    // 270 deg rotation of a T-figure
+    [
+      [1, -1],
+      [1, -1],
+      [1, -1],
+      [0, 0],
+    ],
+    // 360 deg rotation of a T-figure
+    [
+      [-2, 0],
+      [0, -1],
+      [0, -1],
+      [-1, -1],
+    ],
   ],
 ];
 
