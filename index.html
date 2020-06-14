@@ -9,16 +9,26 @@
   <body>
     <h2>TETRIS game</h2>
 
-    <div class="main"></div>
+    <div class="wrapper">
+      <div class="main"></div>
+
+      <div class="controls">
+        <h2 class="rules">Game rules</h2>
+        <p class="rules">Move "right" - press an arrow "right"</p>
+        <p class="rules">Move "left" - press an arrow "left"</p>
+        <p class="rules">"Rotate" figure - press an arrow "up"</p>
+        <p class="rules">"Speed up" - press arrow "down"</p>
+      </div>
+    </div>
 
     <input type="text" readonly />
 
-    <div class="controls">
-      <h2>Управление</h2>
-      <p>Move "right" - press an arrow "right"</p>
-      <p>Move "left" - press an arrow "left"</p>
-      <p>"Rotate" a figure - press an arrow "up"</p>
-      <p>"Speed up" a figure down - press arrow "down"</p>
+    <div class="overlay"></div>
+    <div class="modal">
+      <h2>Choose level</h2>
+      <div class="button easy">Easy</div>
+      <div class="button normal">Normal</div>
+      <div class="button hard">Hard</div>
     </div>
 
     <script type="text/javascript" src="./index.js"></script>
